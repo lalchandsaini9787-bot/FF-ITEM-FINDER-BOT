@@ -5,7 +5,7 @@ from telebot import types
 
 app = Flask(__name__)
 
-BOT_TOKEN = "8807823919:AAEUXwCYO6hgLrxxfbhisGIYSgB4FG-Gbk4"
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8807823919:AAEUXwCYO6hgLrxxfbhisGIYSgB4FG-Gbk4")
 bot = telebot.TeleBot(BOT_TOKEN, parse_mode="Markdown")
 
 ALL_ITEMS = []
