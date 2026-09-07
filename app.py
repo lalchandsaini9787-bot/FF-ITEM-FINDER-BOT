@@ -1,8 +1,12 @@
-from flask import Flask, request
-import requests, os, time, difflib
+import os
 import telebot
-from telebot import types
+from flask import Flask, request
 
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+if not BOT_TOKEN:
+    BOT_TOKEN = "8807823919:AAEUXwCYO6hgLrxxfbhisGIYSgB4FG-Gbk4"
+
+bot = telebot.TeleBot(BOT_TOKEN)
 app = Flask(__name__)
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "8807823919:AAEUXwCYO6hgLrxxfbhisGIYSgB4FG-Gbk4")
